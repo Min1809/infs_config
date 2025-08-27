@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_order_viewer,sale.order.viewer,sale.model_sale_order,infs_config.group_viewer_only,1,0,0,0
+access_account_move_viewer,account.move.viewer,account.model_account_move,infs_config.group_viewer_only,1,0,0,0
+access_purchase_order_viewer,purchase.order.viewer,purchase.model_purchase_order,infs_config.group_viewer_only,1,0,0,0

@@ -1,0 +1,104 @@
+<odoo>
+    <record id="access_sale_order_viewer" model="ir.model.access">
+        <field name="name">INFS_Viewer Sale Order</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+        <field name="group_id" ref="infs_config.group_viewer_only" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Record Rule -->
+    <record id="rule_sale_order_viewer" model="ir.rule">
+        <field name="name">INFS_Viewer Sale Order Rule</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+        <field name="groups" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+
+    <!-- Access Rights -->
+    <record id="access_account_move_viewer" model="ir.model.access">
+        <field name="name">INFS_Viewer Account Move</field>
+        <field name="model_id" ref="account.model_account_move" />
+        <field name="group_id" ref="infs_config.group_viewer_only" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Record Rule -->
+    <record id="rule_account_move_viewer" model="ir.rule">
+        <field name="name">INFS_Viewer Account Move Rule</field>
+        <field name="model_id" ref="account.model_account_move" />
+        <field name="groups" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="crm.crm_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+    </record>
+
+    <record id="crm.menu_crm_opportunities" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+    </record>
+
+    <record id="access_crm_lead_viewer" model="ir.model.access">
+        <field name="name">INFS_Viewer CRM Lead</field>
+        <field name="model_id" ref="crm.model_crm_lead" />
+        <field name="group_id" ref="infs_config.group_viewer_only" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="rule_purchase_order_viewer" model="ir.rule">
+        <field name="name">INFS_Viewer Purchase Order Rule</field>
+        <field name="model_id" ref="crm.model_crm_lead" />
+        <field name="groups" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+
+    <!-- ==================== PURCHASE ORDERS ==================== -->
+
+    <record id="purchase.menu_purchase_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+    </record>
+
+    <record id="access_purchase_order_viewer" model="ir.model.access">
+        <field name="name">INFS_Viewer Purchase Order</field>
+        <field name="model_id" ref="purchase.model_purchase_order" />
+        <field name="group_id" ref="infs_config.group_viewer_only" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="rule_purchase_order_viewer" model="ir.rule">
+        <field name="name">INFS_Viewer Purchase Order Rule</field>
+        <field name="model_id" ref="purchase.model_purchase_order" />
+        <field name="groups" eval="[(4, ref('infs_config.group_viewer_only'))]" />
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+</odoo>

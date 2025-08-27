@@ -1,0 +1,15 @@
+<odoo>
+    <!-- Group Category -->
+    <record id="module_category_infs_config" model="ir.module.category">
+        <field name="name">INFS Config</field>
+        <field name="description">Custom INFS Security Groups</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <!-- Viewer Only Group -->
+    <record id="group_viewer_only" model="res.groups">
+        <field name="name">Viewer Only</field>
+        <field name="category_id" ref="infs_config.module_category_infs_config"/>
+    </record>
+
+</odoo>
