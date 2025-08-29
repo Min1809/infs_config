@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "infs_config",
+    'name': "INFS_Config",
     'version': '1.0.0',
     'category': 'infs',
     'author': "INFS",
