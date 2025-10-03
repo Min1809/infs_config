@@ -1,0 +1,12 @@
+<odoo>
+    <record id="ir_infs_cron_set_to_saleorder" model="ir.cron">
+        <field name="name">INFS Set to saleorder</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">env['sale.order'].setbackto_saleorder()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">weeks</field>
+        <field name="numbercall">-1</field>
+        <field name="active">False</field>
+    </record>
+</odoo>

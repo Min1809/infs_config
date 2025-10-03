@@ -13,6 +13,7 @@
         'security/group.xml',
         'security/rules.xml',
         'security/ir.model.access.csv',
+        'data/saleorder.xml',
     ],
     'assets': {
     },
