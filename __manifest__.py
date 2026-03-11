@@ -14,7 +14,7 @@
         'security/rules.xml',
         'security/ir.model.access.csv',
         'data/saleorder.xml',
-        'data/cron.xml',
+        # 'data/cron.xml',
         'views/menu.xml',
         # 'views/res_users_views.xml',
     ],
