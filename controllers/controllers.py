@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import request
 
 
-# class InfsConfig(http.Controller):
-#     @http.route('/infs_config/infs_config', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class InfsConfigRedirect(http.Controller):
 
-#     @http.route('/infs_config/infs_config/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('infs_config.listing', {
-#             'root': '/infs_config/infs_config',
-#             'objects': http.request.env['infs_config.infs_config'].search([]),
-#         })
+    @http.route('/infs_config/goto/todo', type='http', auth='user')
+    def goto_todo(self):
+        """Full-page redirect to the To-do app with correct menu context."""
+        menu = request.env.ref('project_todo.menu_todo_todos')
+        return request.redirect('/web#menu_id=%d' % menu.id)
 
-#     @http.route('/infs_config/infs_config/objects/<model("infs_config.infs_config"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('infs_config.object', {
-#             'object': obj
-#         })
+    @http.route('/infs_config/goto/timesheets', type='http', auth='user')
+    def goto_timesheets(self):
+        """Full-page redirect to My Timesheets with correct menu context."""
+        menu = request.env.ref('hr_timesheet.timesheet_menu_activity_user')
+        return request.redirect('/web#menu_id=%d' % menu.id)
 

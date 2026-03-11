@@ -1,0 +1,46 @@
+<odoo>
+    <!-- URL actions that force a full-page redirect with correct app context -->
+    <record id="action_url_goto_todo" model="ir.actions.act_url">
+        <field name="name">Go to To Do</field>
+        <field name="url">/infs_config/goto/todo</field>
+        <field name="target">self</field>
+    </record>
+    <record id="action_url_goto_timesheets" model="ir.actions.act_url">
+        <field name="name">Go to Timesheets</field>
+        <field name="url">/infs_config/goto/timesheets</field>
+        <field name="target">self</field>
+    </record>
+
+    <!-- ==================== Timesheets App: Quick Links ==================== -->
+    <!-- Positioned between "Timesheets" (seq=5) and "To Validate" (seq=10) -->
+    <menuitem
+        id="menu_timesheet_quick_links"
+        name="Quick Links"
+        parent="hr_timesheet.timesheet_menu_root"
+        sequence="7"
+        groups="infs_crm.group_admin_config"
+    />
+    <menuitem
+        id="menu_timesheet_quick_links_todo"
+        name="To Do"
+        parent="menu_timesheet_quick_links"
+        action="action_url_goto_todo"
+        groups="infs_crm.group_admin_config"
+    />
+
+    <!-- ==================== Todo App: Quick Links ==================== -->
+    <menuitem
+        id="menu_todo_quick_links"
+        name="Quick Links"
+        parent="project_todo.menu_todo_todos"
+        sequence="10"
+        groups="infs_crm.group_admin_config"
+    />
+    <menuitem
+        id="menu_todo_quick_links_timesheet"
+        name="Timesheets"
+        parent="menu_todo_quick_links"
+        action="action_url_goto_timesheets"
+        groups="infs_crm.group_admin_config"
+    />
+</odoo>

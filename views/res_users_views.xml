@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit the "My Preferences" popup form -->
+    <record id="view_users_preferences_auto_close" model="ir.ui.view">
+        <field name="name">res.users.preferences.auto_close_timesheet</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <group name="preference_contact" position="after">
+                <group name="auto_close_timesheet" groups="infs_crm.group_admin_config">
+                    <field name="is_auto_close_timesheet" string="Auto Close Task?"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <!-- Also inherit the full user admin form so managers can see/set it -->
+    <record id="view_users_form_auto_close" model="ir.ui.view">
+        <field name="name">res.users.form.auto_close_timesheet</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <page name="preferences" position="inside">
+                <group name="auto_close_timesheet_admin" string="Timesheets" groups="infs_crm.group_admin_config">
+                    <field name="is_auto_close_timesheet" string="Auto Close Task?"/>
+                </group>
+            </page>
+        </field>
+    </record>
+</odoo>
